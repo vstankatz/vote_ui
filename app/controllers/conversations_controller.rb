@@ -1,11 +1,11 @@
 class ConversationsController < ApplicationController
 
-  # before_action :authenticate
+  before_action :authorize
 
   def index
     @user = User.find(session[:user_id])
     @users = User.all
-    @conversations = Conversation.all
+    @conversations = Conversation.where("user1_id = ? OR user2_id = ?", @user.id, @user.id)
     render :index
   end
 
@@ -14,7 +14,6 @@ class ConversationsController < ApplicationController
       @conversation = Conversation.between(params[:user1_id],
         params[:user2_id]).first
     else
-      binding.pry
       @conversation = Conversation.create!(conversation_params)
     end
     redirect_to conversation_messages_path(@conversation)

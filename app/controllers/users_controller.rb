@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  before_action :authorize, only: [:show, :destroy]
   def new
     @user = User.new
   end
@@ -14,6 +15,18 @@ class UsersController < ApplicationController
       flash[:alert] = "There was a problem signing up."
       redirect_to '/signup'
     end
+  end
+
+  def show
+    @user = User.find(session[:user_id])
+    render :show
+  end
+
+  def destroy
+    @user = User.find(session[:user_id])
+    @user.destroy
+    session[:user_id] = nil
+    redirect_to posts_path
   end
 
   private

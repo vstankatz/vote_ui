@@ -15,7 +15,7 @@
       <a href="/">Home</a> |
       <a href="/posts">Forum</a>
       <% if current_user %>
-        <p><img src="https://img.icons8.com/pastel-glyph/64/000000/person-male.png">
+        <p><a href="/user"><img src="https://img.icons8.com/pastel-glyph/64/000000/person-male.png"></a>
           <%= current_user.email %> |
           <%= link_to "Sign out", '/signout' %> |
           <%= link_to "Chat", '/conversations' %>
