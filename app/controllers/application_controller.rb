@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find(session[:user_id])
     end
   end
+
+  def authorize
+    if !current_user
+      flash[:alert] = "Sign in to post on the forum."
+      redirect_to '/posts'
+    end
+  end
+
 end

@@ -10,9 +10,15 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
 
-  # Message routes
-  resources :messages
+  # Post routes
+  resources :posts
 
-  #information routes
+  # Information routes
   resources :information
+
+  # Private messaging routes
+  resources :conversations do
+    resources :messages
+   end
+
 end
