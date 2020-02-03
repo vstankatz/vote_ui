@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VoteUi</title>
+    <title>VoteUI</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,19 @@
   </head>
 
   <body>
+
+    <div class="navbar">
+      <a href="/">Home</a>
+      <% if current_user %>
+        <p><img src="https://img.icons8.com/pastel-glyph/64/000000/person-male.png">
+        <%= current_user.email %> |
+        <%= link_to "Sign out", '/signout' %></p>
+      <% else %>
+        <p><%= link_to "Sign up", '/signup' %> |
+        <%= link_to "Sign in", '/signin' %></p>
+    <% end %>
+    </div>
+
     <%= yield %>
   </body>
 </html>
