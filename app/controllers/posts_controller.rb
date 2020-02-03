@@ -17,10 +17,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      flash[:notice] = "You have posted your post"
+      flash[:notice] = "You have posted your message"
       redirect_to posts_path
     else
-      flash[:alert] = "Post not posted"
+      flash[:alert] = "Message not posted"
       render :new
     end
   end

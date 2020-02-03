@@ -15,4 +15,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # def authenticate
+  #
+
 end
