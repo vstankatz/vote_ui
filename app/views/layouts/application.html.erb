@@ -12,7 +12,8 @@
   <body>
 
     <div class="navbar">
-      <a href="/">Home</a>
+      <a href="/">Home</a> |
+      <a href="/posts">Forum</a>
       <% if current_user %>
         <p><img src="https://img.icons8.com/pastel-glyph/64/000000/person-male.png">
         <%= current_user.email %> |
@@ -22,6 +23,9 @@
         <%= link_to "Sign in", '/signin' %></p>
     <% end %>
     </div>
+
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
 
     <%= yield %>
   </body>
