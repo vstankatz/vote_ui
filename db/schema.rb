@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_02_03_182241) do
   enable_extension "plpgsql"
 
   create_table "messages", force: :cascade do |t|
-    t.string "user_name"
+    t.string "name"
     t.string "title"
     t.string "content"
     t.datetime "created_at", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_02_03_182241) do
     t.string "email"
     t.string "password_hash"
     t.string "password_salt"
-    t.string "user_name"
+    t.string "name"
   end
 
 end
