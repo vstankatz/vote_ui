@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   before_action :authorize, only: [:show, :destroy]
 
   def new
+    # binding.pry
+    # if params[:errors]
+    #   @errors = params[:errors]
+    # end
     @user = User.new
   end
 
@@ -13,8 +17,10 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to "/"
     else
+      # binding.pry
       flash[:alert] = "There was a problem signing up."
-      redirect_to '/signup'
+      render :new
+      # params[:errors] = @user.errors
     end
   end
 

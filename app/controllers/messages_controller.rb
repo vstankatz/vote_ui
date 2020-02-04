@@ -1,5 +1,8 @@
 class MessagesController < ApplicationController
 
+  # send_cable(message)
+  # render json: { state: 200 }
+
   before_action do
     @conversation = Conversation.find(params[:conversation_id])
     @user = User.find(session[:user_id])

@@ -1,0 +1,6 @@
+<% if @object.errors.any? %>
+  <p>Please fix these errors:</p>
+    <% @object.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+<% end %>
