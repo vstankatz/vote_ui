@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def user_authorize(conversation)
+  def authorize_conversation(user, conversation)
     if current_user.id != conversation.user1_id && current_user.id != conversation.user2_id
       flash[:alert] = "You are not authorized to access that feature."
       redirect_to '/posts'
