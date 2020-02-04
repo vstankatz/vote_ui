@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # User routes
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+  get '/user' => 'users#show'
+  delete '/user' => 'users#destroy'
 
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
