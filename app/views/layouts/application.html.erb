@@ -1,34 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>VoteUI</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>VoteUI</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Alata|Anton|Bebas+Neue|Candal|Catamaran|Heebo|Josefin+Sans|Patua+One|Reem+Kufi&display=swap" rel="stylesheet">
+</head>
 
-  <body>
+<body>
+  <%= render "layouts/splash" %>
 
-    <div class="navbar">
-      <a href="/">Home</a> |
-      <a href="/posts">Forum</a>
-      <% if current_user %>
-        <p><a href="/user"><img src="https://img.icons8.com/pastel-glyph/64/000000/person-male.png"></a>
-          <%= current_user.email %> |
-          <%= link_to "Sign out", '/signout' %> |
-          <%= link_to "Chat", '/conversations' %>
-        </p>
-      <% else %>
-        <p><%= link_to "Sign up", '/signup' %> |
-        <%= link_to "Sign in", '/signin' %></p>
-    <% end %>
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
+  </nav> -->
+
+  <!-- <div class="navbar">
+    <a href="/">Home</a> |
+    <a href="/posts">Forum</a>
+    <% if current_user %>
+    <p><a href="/user"><img src="https://img.icons8.com/pastel-glyph/64/000000/person-male.png"></a>
+      <%= current_user.email %> |
+      <%= link_to "Sign out", '/signout' %> |
+      <%= link_to "Chat", '/conversations' %>
+    </p>
+    <% else %>
+    <p><%= link_to "Sign up", '/signup' %> |
+      <%= link_to "Sign in", '/signin' %></p>
+      <% end %>
+    </div> -->
 
     <%= flash[:notice] %>
     <%= flash[:alert] %>
     <%= render "layouts/usa_map" %>
     <%= yield %>
+
+    <h1 id="1a">Votential</h1>
+    <h1 id="1b">VOTENTIAL</h1>
+    <h1 id="2a">Votential</h1>
+    <h1 id="2b">VOTENTIAL</h1>
+    <h1 id="3a">Votential</h1>
+    <h1 id="3b">VOTENTIAL</h1>
+    <h1 id="4a">Votential</h1>
+    <h1 id="4b">VOTENTIAL</h1>
+    <h1 id="5a">Votential</h1>
+    <h1 id="5b">VOTENTIAL</h1>
+    <h1 id="6a">Votential</h1>
+    <h1 id="6b">VOTENTIAL</h1>
+    <h1 id="7a">Votential</h1>
+    <h1 id="7b">VOTENTIAL</h1>
+    <h1 id="8a">Votential</h1>
+    <h1 id="8b">VOTENTIAL</h1>
+    <h1 id="9a">Votential</h1>
+    <h1 id="9b">VOTENTIAL</h1>
+
   </body>
-</html>
+  </html>

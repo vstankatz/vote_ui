@@ -14,9 +14,11 @@
   //= require activestorage
   //= require turbolinks
   //= require_tree .
-  //= require jquery
-  //= require jquery_ujs
 
+  //= require jquery_ujs
+  //= require jquery3
+  //= require popper
+  //= require bootstrap-sprockets
   $(document).ready(function () {
 
     $("path, circle").hover(function(e) {
