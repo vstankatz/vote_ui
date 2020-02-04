@@ -19,6 +19,7 @@ Bundler.require(*Rails.groups)
 
 module VoteUi
   class Application < Rails::Application
+    config.middleware.use Rack::Attack
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
@@ -29,6 +30,5 @@ module VoteUi
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.middleware.use Rack::Attack
   end
 end

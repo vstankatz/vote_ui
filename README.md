@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Lee's notes
+
+* user auth working
+
+* email verification?
+
+* notifications?
+
+* DDOS protection working
