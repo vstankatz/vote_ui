@@ -19,8 +19,12 @@ Bundler.require(*Rails.groups)
 
 module VoteUi
   class Application < Rails::Application
+    config.middleware.use Rack::Attack
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+
+    # Forces SSL connection
+    # config.force_ssl = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -29,6 +33,5 @@ module VoteUi
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.middleware.use Rack::Attack
   end
 end

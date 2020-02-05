@@ -7,22 +7,26 @@ class MessagesController < ApplicationController
   end
 
   def index
+    # if (session[:updated_at]) < 3.seconds.ago
+    #   session.destroy
+    #   redirect_to ''
+    # end
+    @messages = @conversation.messages
+    if @messages.length > 10
+      @over_ten = true
+      @messages = @messages[-10..-1]
+    end
+    if params[:m]
+      @over_ten = false
       @messages = @conversation.messages
-      if @messages.length > 10
-        @over_ten = true
-        @messages = @messages[-10..-1]
+    end
+    if @messages.last
+      if @messages.last.user_id != current_user.id
+        @messages.last.read = true;
       end
-      if params[:m]
-        @over_ten = false
-        @messages = @conversation.messages
-      end
-      if @messages.last
-        if @messages.last.user_id != current_user.id
-          @messages.last.read = true;
-        end
-      end
-      @message = @conversation.messages.new
-   end
+    end
+    @message = @conversation.messages.new
+  end
 
   def new
     @message = @conversation.messages.new

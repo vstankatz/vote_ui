@@ -1,10 +1,17 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
+  after_action :updated_at
 
   def current_user
     if session[:user_id]
-      @current_user ||= User.find(session[:user_id])
+      return @current_user ||= User.find(session[:user_id])
+    end
+  end
+
+  def current_session
+    if current_user
+      SweepJob.perform_async(session)
     end
   end
 
@@ -22,4 +29,23 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def updated_at
+    if session[:user_id]
+      current_time = Time.new
+      session[:updated_at] = current_time
+    end
+  end
+
+  def self.sweep(session)
+    if session[:updated_at] == nil
+      return true
+    elsif (session[:updated_at]) < 5.seconds.ago
+      session.destroy
+      session.clear
+      session[:user_id] = nil
+      @current_user = nil
+      return true
+    end
+    false
+  end
 end

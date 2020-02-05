@@ -99,7 +99,7 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
-    msgpack (1.3.1)
+    msgpack (1.3.3)
     nio4r (2.5.2)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
@@ -143,6 +143,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (3.3.5)
     rspec-core (3.9.1)
       rspec-support (~> 3.9.1)
     rspec-expectations (3.9.0)
@@ -193,6 +194,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sucker_punch (2.1.2)
+      concurrent-ruby (~> 1.0)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -230,11 +233,13 @@ DEPENDENCIES
   puma (~> 3.11)
   rack-attack
   rails (~> 5.2.4, >= 5.2.4.1)
+  redis (~> 3.2)
   rspec-rails
   sass-rails (~> 5.0)
   shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
+  sucker_punch
   sprockets-rails
   turbolinks (~> 5)
   tzinfo-data

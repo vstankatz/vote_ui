@@ -65,6 +65,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'rack-attack'
+gem 'redis', '~> 3.2'
+gem 'sucker_punch'
 
 group :test do
   gem 'shoulda-matchers'

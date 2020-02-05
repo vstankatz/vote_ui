@@ -1,4 +1,8 @@
+
+<%= render "layouts/errors", :object => @user %>
+
 <%= render "layouts/nav_bar" %>
+
 <h1> Sign up</h1>
 <%= form_for @user do |f| %>
   <%= f.label "Email" %>

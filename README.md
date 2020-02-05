@@ -22,3 +22,27 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Lee's notes
+
+* session_store.rb not doing anything right now
+
+* sucker_punch gem for asynchronous background jobs probably not the best for high-load applications
+
+#### working
+
+* user auth
+
+* each user session now unique
+
+* throttling - for ddos and brute-force password attacks
+
+* better email verification
+
+#### to do?
+
+* automatic timeout
+
+* no need to refresh for new messages
+
+* handle weird exceptions

@@ -3,6 +3,7 @@ class ConversationsController < ApplicationController
   before_action :authorize
 
   def index
+    binding.pry
     @user = User.find(session[:user_id])
     @users = User.all
     @conversations = Conversation.where("user1_id = ? OR user2_id = ?", @user.id, @user.id)

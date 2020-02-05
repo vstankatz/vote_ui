@@ -12,12 +12,9 @@
 
 <body>
 
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+  <%= yield %>
 
-
-
-
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
-    <%= yield %>
-  </body>
-  </html>
+</body>
+</html>

@@ -1,9 +1,15 @@
 class SessionsController < ApplicationController
+
+  after_action :current_session
+
   def create
     @user = User.authenticate(params[:email], params[:password])
     if @user
+      reset_session
       flash[:notice] = "You've signed in."
       session[:user_id] = @user.id
+      current_time = Time.new
+      session[:updated_at] = current_time
       redirect_to "/posts"
     else
       flash[:alert] = "There was a problem signing in. Please try again."
@@ -16,4 +22,5 @@ class SessionsController < ApplicationController
     flash[:notice] = "You've signed out."
     redirect_to "/"
   end
+
 end

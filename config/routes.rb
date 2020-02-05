@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  #development route for map
+  mount ActionCable.server => '/cable'
   
+  #development route for map
+
   root to: 'information#index'
 
   # User routes
