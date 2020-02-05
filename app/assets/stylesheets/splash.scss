@@ -8,7 +8,6 @@
   height: 100vh;
   background-size: cover;
   background-position: center;
-  margin-bottom: 50px;
 
   display: flex;
   flex-direction: column;
@@ -16,13 +15,11 @@
   align-items: center;
 
   // border: 20px solid black;
-  padding: 20px;
-  margin-bottom: 5px solid #ED563C;
 }
 
 h1 {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 500%;
+  font-size: 10vw;
   color: rgba(246, 255, 235, 1);
   font-weight: bold;
 }
@@ -31,6 +28,6 @@ h1 {
   color: #ED563C;
   font-size: 200%;
   position: relative;
-  left: 20px;
-  top: 10px;
+  left: 5%;
+  top: 5%;
 }
