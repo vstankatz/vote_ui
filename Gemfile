@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 
 
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -70,3 +71,8 @@ gem 'sucker_punch'
 group :test do
   gem 'shoulda-matchers'
 end
+
+
+# added by Jonathan
+gem 'bootstrap'
+gem 'sprockets-rails'
