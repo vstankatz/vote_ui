@@ -3,24 +3,22 @@ class UsersController < ApplicationController
   before_action :authorize, only: [:show, :destroy]
 
   def new
-    # binding.pry
-    # if params[:errors]
-    #   @errors = params[:errors]
-    # end
     @user = User.new
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      flash[:notice] = "You've successfully signed up!"
-      session[:user_id] = @user.id
-      redirect_to "/"
+    if @user = User.new(user_params)
+      if @user.save
+        flash[:notice] = "You've successfully signed up!"
+        session[:user_id] = @user.id
+        redirect_to "/"
+      else
+        flash[:alert] = "There was a problem signing up."
+        render :new
+      end
     else
-      # binding.pry
-      flash[:alert] = "There was a problem signing up."
+      flash[:alert] = "There was a problem signing up. Try clearing your cookies and trying again"
       render :new
-      # params[:errors] = @user.errors
     end
   end
 

@@ -1,12 +1,17 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
-
-  before_action :updated_at
+  after_action :updated_at
 
   def current_user
     if session[:user_id]
       @current_user ||= User.find(session[:user_id])
+    end
+  end
+
+  def current_session
+    if session[:user_id]
+      SweepJob.perform_async(session)
     end
   end
 
@@ -25,15 +30,22 @@ class ApplicationController < ActionController::Base
   end
 
   def updated_at
-    current_time = Time.new
-    session[:updated_at] = current_time
-  end
-
-  def sweep
-    if (session[:updated_at]) < 20.minutes.ago
-      flash[:alert] = "To keep your information secure, you have been automatically signed out."
-      redirect_to '/signout'
+    if session[:user_id]
+      current_time = Time.new
+      session[:updated_at] = current_time
     end
   end
 
+  def self.sweep(session)
+    # binding.pry
+    if session[:updated_at] == nil
+      binding.pry
+      true
+    elsif (session[:updated_at]) < 1.minute.ago
+      session.destroy
+      binding.pry
+      true
+    end
+    false
+  end
 end
