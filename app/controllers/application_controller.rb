@@ -5,12 +5,12 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if session[:user_id]
-      @current_user ||= User.find(session[:user_id])
+      return @current_user ||= User.find(session[:user_id])
     end
   end
 
   def current_session
-    if session[:user_id]
+    if current_user
       SweepJob.perform_async(session)
     end
   end
@@ -37,14 +37,14 @@ class ApplicationController < ActionController::Base
   end
 
   def self.sweep(session)
-    # binding.pry
     if session[:updated_at] == nil
-      binding.pry
-      true
-    elsif (session[:updated_at]) < 1.minute.ago
+      return true
+    elsif (session[:updated_at]) < 5.seconds.ago
       session.destroy
-      binding.pry
-      true
+      session.clear
+      session[:user_id] = nil
+      @current_user = nil
+      return true
     end
     false
   end

@@ -4,9 +4,9 @@ class SweepJob
   def perform(session)
     signed_in = true
     while signed_in == true
-      sleep 5
+      sleep 10
       puts "sweeping now"
-      if ApplicationController.sweep(session)
+      if ApplicationController.sweep(session) == true
         signed_in = false
         puts "signed out"
       end
