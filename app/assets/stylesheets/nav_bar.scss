@@ -1,14 +1,18 @@
 nav {
   font-family:  'Josefin Sans', sans-serif;
   font-weight: bold;
-  color: #1b326e;
-  padding-bottom: 5%;
+  margin-bottom: 10%;
+  background-color: #1B326E!important;
 }
 
-#v-small {
+.v-small {
   font-size: 150%;
   color: #ed563c;
   position: relative;
   left: 2px;
   top: 2px;
+}
+
+.navbar > a, .nav-link, .nav-link > a  {
+  color: #F6FFEB!important;
 }

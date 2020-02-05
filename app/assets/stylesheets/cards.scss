@@ -1,0 +1,26 @@
+.card-deck {
+  // margin: 2em;
+  margin: 10%;
+  float: none;
+}
+
+.card-deck > .card {
+  width: auto!important;
+  border: solid 5px #1B326E;
+  background-color: rgba(246, 255, 235, 1);
+}
+.card-deck > .card > .card-body> a {
+  background-color: #20C3FF ;
+  border: none;
+}
+
+.card-deck > .card > .card-body> a:hover {
+  background-color: #1B326E;
+}
+
+
+@media (max-width: 719px) {
+  .card-deck {
+    margin: 0 auto;
+  }
+}
