@@ -16,3 +16,12 @@ nav {
 .navbar > a, .nav-link, .nav-link > a  {
   color: #F6FFEB!important;
 }
+
+.nav-link:hover, .nav-link > a:hover  {
+  color: #ed563c!important;
+  text-decoration: none;
+}
+
+.navbar-email {
+  color: #20C3FF!important;
+}

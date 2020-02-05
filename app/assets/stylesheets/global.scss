@@ -19,17 +19,3 @@ hr {
   size: 1px;
   width: 70%;
 }
-
-.jumbotron {
-  background-image:
-    radial-gradient(
-      rgba(32, 195, 255, 1),
-      rgba(32, 195, 255, 0.4)
-    ),
-    url(voted-stickers.jpg);
-  margin-bottom: 10em;
-}
-
-.jumbotron a {
-  background-color: #ed563c!important;
-}

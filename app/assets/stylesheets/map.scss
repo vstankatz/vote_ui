@@ -42,3 +42,10 @@ path:hover, circle:hover {
   border: solid 10px #0D1732;
   background-color: #ed563c;
 }
+
+@media (max-width: 719px) {
+  #map-box {
+    margin: auto;
+    border: none;
+  }
+}
