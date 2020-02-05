@@ -1,0 +1,46 @@
+.card-deck {
+  // margin: 2em;
+  margin: 10%;
+  float: none;
+}
+
+.card-deck > .card {
+  width: auto!important;
+  border: none;
+  background-color: #ED563C;
+}
+.card-deck > .card > .card-body> a {
+  background-color: #1B326E;
+  border: none;
+}
+
+.card-deck > .card > .card-body> a:hover {
+  background-color: #20C3FF;
+}
+
+
+@media (max-width: 719px) {
+  .card-deck {
+    margin: 0 auto;
+  }
+}
+
+.image-overlay {
+   background: #ED563C;
+   position: relative;
+
+    width: 100%;
+
+    background-size: cover;
+    background-position: center;
+}
+
+img {
+  width: 100%;
+  // height: 20vw;
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
