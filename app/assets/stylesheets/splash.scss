@@ -1,5 +1,10 @@
 #splash {
-  background-image: url(voted-stickers.jpg);
+  background-image:
+    radial-gradient(
+      rgba(32, 195, 255, 1),
+      rgba(32, 195, 255, 0.4)
+    ),
+    url(voted-stickers.jpg);
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -9,4 +14,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  border: 20px solid black;
+  padding: 20px;
+  margin-bottom: 5px solid #ED563C;
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 500%;
+  color: rgba(246, 255, 235, 1);
+  font-weight: bold;
+}
+
+#v {
+  color: #ED563C;
+  font-size: 200%;
+  position: relative;
+  left: 20px;
+  top: 10px;
 }

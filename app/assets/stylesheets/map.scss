@@ -1,21 +1,21 @@
 #us-map{
-  display: block;
-  /* position: absolute; */
+  // display: block;
+  // position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
 path:hover, circle:hover {
-  stroke: #002868 !important;
+  stroke: #20c3ff !important;
   stroke-width:2px;
   stroke-linejoin: round;
-  fill: #002868 !important;
+  fill: #20c3ff !important;
   cursor: pointer;
 }
 #path67 {
   fill: none !important;
-  stroke: #A9A9A9 !important;
+  stroke: black !important;
   cursor: default;
 }
 #info-box {
@@ -24,13 +24,21 @@ path:hover, circle:hover {
   top: 0px;
   left: 0px;
   z-index: 1;
-  background-color: #ffffff;
-  border: 2px solid #BF0A30;
+  background-color: rgba(246, 255, 235, .9);
+  // border: 2px solid #BF0A30;
   border-radius: 5px;
   padding: 5px;
-  font-family: arial;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 #map-box {
+  // display: flex;
+  // flex-direction: column;
+  margin: auto;
   width: 75%;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  border: solid 10px black;
+  background-color: #ed563c;
 }
