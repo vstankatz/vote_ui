@@ -25,16 +25,20 @@ Things you may want to cover:
 
 ## Lee's notes
 
+* session_store.rb not doing anything right now
+
 #### working
 
 * user auth
 
 * each user session now unique
 
-* throttling
+* throttling - for ddos and brute-force password attacks
 
 * better email verification
 
 #### to do?
 
 * automatic timeout
+
+* no need to refresh for new messages

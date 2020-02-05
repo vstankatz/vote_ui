@@ -28,9 +28,12 @@
     <% end %>
     </div>
 
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
-    <!--- render "layouts/usa_map" --->
-    <%= yield %>
+    <div class="container">
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+      <!--- render "layouts/usa_map" --->
+      <%= yield %>
+    </div>
+
   </body>
 </html>
