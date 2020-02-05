@@ -1,6 +1,5 @@
 development:
-  adapter: redis
-  url: http://localhost:3000
+  adapter: async
 
 test:
   adapter: async

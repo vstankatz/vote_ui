@@ -22,4 +22,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def sweep
+    if (session[:updated_at]) < 1.hour.ago
+      flash[:alert] = "To keep your information secure, you have been automatically signed out."
+      redirect_to '/signout'
+    end
+  end
+
 end

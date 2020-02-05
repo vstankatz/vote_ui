@@ -25,12 +25,16 @@ Things you may want to cover:
 
 ## Lee's notes
 
-* user auth working
+#### working
 
-* email verification?
+* user auth
 
-* notifications?
+* each user session now unique
 
-* DDOS protection working
+* throttling
 
-*
+* better email verification
+
+#### to do?
+
+* automatic timeout
