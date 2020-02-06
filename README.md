@@ -1,48 +1,36 @@
-# README
+# Application: **Votential**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### By Veronica Stanley-Katz, Lee Pedersen, Jonathan Salfen, and Eva Wiedmann
 
-Things you may want to cover:
+###### _2020-02-06_
 
-* Ruby version
+## Description:
+This application was made as a team coding project at _[Epicodus](http://www.epicodus.com)_, a vocational school for technology careers based in Portland, OR. The project is designed to create an application to provide citizens with information about voting in their state including registration, election dates, and current representatives.
 
-* System dependencies
+## Setup/Installation instructions:
+* Click the `Clone or download` button and copy the link.
+* Open your terminal application and run `git clone (link)`.
+* Navigate to the newly created repository and run `bundle install`.
+* Run `rake db:create`.
+* Run `rake db:migrate`.
+* Run `rails s`.
+* Open `localhost:3000` in browser.
 
-* Configuration
 
-* Database creation
+## Technologies Used
+> `Ruby`
+> `Rails`
+> `JavaScript`
+> `CSS`
+> `html`
 
-* Database initialization
+## Known Bugs
+* None
 
-* How to run the test suite
+## References
 
-* Services (job queues, cache servers, search engines, etc.)
+## Support and contact details
+Contact [Lee](https://github.com/LeePedersen), [Jonathan](https://github.com/jonathansalfen), [Veronica](https://github.com/vstankatz), or [Eva](https://github.com/evawiedmann) for support.
 
-* Deployment instructions
-
-* ...
-
-## Lee's notes
-
-* session_store.rb not doing anything right now
-
-* sucker_punch gem for asynchronous background jobs probably not the best for high-load applications
-
-#### working
-
-* user auth
-
-* each user session now unique
-
-* throttling - for ddos and brute-force password attacks
-
-* better email verification
-
-#### to do?
-
-* automatic timeout
-
-* no need to refresh for new messages
-
-* handle weird exceptions
+## License
+This repository is copyright (C) 2020 by Veronica Stanley-Katz, Lee Pedersen, Jonathan Salfen, and Eva Wiedmann.

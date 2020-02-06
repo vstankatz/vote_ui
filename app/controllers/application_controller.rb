@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def current_session
-    if current_user
-      SweepJob.perform_async(session)
-    end
-  end
+  # def current_session
+  #   if current_user
+  #     SweepJob.perform_async(session)
+  #   end
+  # end
 
   def authorize
     if !current_user
@@ -29,6 +29,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authorize_author(post)
+    if !current_user || current_user.name != post.name
+      flash[:alert] = "You are not authorized to access that feature."
+      redirect_to '/posts' and return
+    end
+  end
+
   def updated_at
     if session[:user_id]
       current_time = Time.new
@@ -36,16 +43,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def self.sweep(session)
-    if session[:updated_at] == nil
-      return true
-    elsif (session[:updated_at]) < 5.seconds.ago
-      session.destroy
-      session.clear
-      session[:user_id] = nil
-      @current_user = nil
-      return true
-    end
-    false
-  end
+  # def self.sweep(session)
+  #   if session[:updated_at] < 20.minutes.ago
+  #     session.destroy
+  #     return true
+  #   end
+  #   false
+  # end
+
 end

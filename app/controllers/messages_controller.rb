@@ -7,10 +7,6 @@ class MessagesController < ApplicationController
   end
 
   def index
-    # if (session[:updated_at]) < 3.seconds.ago
-    #   session.destroy
-    #   redirect_to ''
-    # end
     @messages = @conversation.messages
     if @messages.length > 10
       @over_ten = true

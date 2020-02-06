@@ -9,9 +9,9 @@ Working
 * each user session now unique
 * throttling - for ddos and brute-force password attacks
 * better email verification
+* automatic timeout
 
 To do?
 
-* automatic timeout
 * no need to refresh for new messages
 * handle weird exceptions

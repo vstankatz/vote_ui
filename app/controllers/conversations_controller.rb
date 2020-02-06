@@ -3,7 +3,6 @@ class ConversationsController < ApplicationController
   before_action :authorize
 
   def index
-    binding.pry
     @user = User.find(session[:user_id])
     @users = User.all
     @conversations = Conversation.where("user1_id = ? OR user2_id = ?", @user.id, @user.id)
@@ -11,7 +10,7 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    if Conversation.between(params[:user1_id],params[:user2_id]).present?
+    if Conversation.between(params[:user1_id], params[:user2_id]).present?
       @conversation = Conversation.between(params[:user1_id],
         params[:user2_id]).first
     else

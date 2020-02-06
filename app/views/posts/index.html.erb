@@ -1,16 +1,21 @@
 <%= render "layouts/nav_bar" %>
-<h1>Message Board</h1>
-
-<% if @posts.any? %>
-<ul>
-  <% @posts.each do |post| %>
-  <li><%= link_to post.title, post_path(post) %></li>
-  <% end %>
-</ul>
-<% else %>
-  <p>There are no posts yet.</p>
-<% end %>
 
 <% if @user %>
-  <p><%= link_to "Add post", new_post_path %></p>
+  <p id="add-post"><%= link_to "Add post", new_post_path %></p>
+<% end %>
+
+<h1 class="forum-header">Recent Posts</h1>
+
+<% if @posts.any? %>
+  <% @posts = @posts.sort_by(&:created_at).reverse %>
+  <% @posts.each do |post| %>
+  <div class="container post">
+    <p class="post-title"><%= link_to post.title, post_path(post) %>, by <%= post.name %></p>
+    <p class="post-content"><%= post.content %></p>
+    <p>Written <%= post.created_at %></p>
+    <p><%= link_to "Reply", new_post_path %></p>
+  </div>
+  <% end %>
+<% else %>
+  <p>There are no posts yet.</p>
 <% end %>

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :authorize, only: [:new, :create, :edit, :destroy, :update]
+  before_action :authorize, only: [:new, :create]
 
   def index
     @posts = Post.all
@@ -29,8 +29,10 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    @user = User.find(session[:user_id])
-    render :edit
+    if authorize_author(@post)
+      @user = User.find(session[:user_id])
+      render :edit
+    end
   end
 
   def show
@@ -43,15 +45,19 @@ class PostsController < ApplicationController
 
   def update
     @post= Post.find(params[:id])
-    if @post.update(post_params)
-      redirect_to posts_path
-    else
+    if authorize_author(@post)
+      if @post.update(post_params)
+        redirect_to posts_path
+      else
       render :edit
+      end
     end
   end
 
   def destroy
     @post = Post.find(params[:id])
+    binding.pry
+    authorize_author(@post)
     @post.destroy
     redirect_to posts_path
   end

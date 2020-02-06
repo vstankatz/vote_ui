@@ -69,6 +69,7 @@ gem 'jquery-rails'
 gem 'rack-attack'
 gem 'redis', '~> 3.2'
 gem 'sucker_punch'
+gem 'faker'
 
 group :test do
   gem 'shoulda-matchers'
