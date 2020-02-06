@@ -1,0 +1,50 @@
+<%= render "layouts/nav_bar" %>
+<div class="state-div">
+
+  <div class="state-info-and-senators">
+    <div>
+      <h3>Info for <%= @state_info["code"] %>:</h3>
+      <div class="state-info">
+        <p><span>Primary: </span><%= @state_info["primary"] %></p>
+        <p><span>Absentee: </span><%= @state_info["absentee"] %></p>
+        <p><span>Need an ID to Vote? </span><a href=<%= @state_info["whats_needed"] %>>Find Out Here</a></p>
+        <p><span>State Governor: </span><%= @state_info["govenor"] %></p>
+        <p><span>State Governor Phone: </span><%= @state_info["govenor_phone"] %></p>
+      </div>
+    </div>
+
+    <div>
+      <h3><span>Senators:</span></h3>
+      <div class="state-senators">
+        <% @state_info["senators"].each do |senator| %>
+        <p><span>Name: </span><%= senator["name"]%></p>
+        <p><span>Phone: </span><%= senator["phone"]%></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <h3>Local Election Info:</h3>
+  <div class="state-elections">
+    <% @state_info["elections"].each do |election| %>
+    <% if election["party"] == "Republican" %>
+    <% state_color_class = "red" %>
+    <% elsif election["party"] == "Democrtatic" %>
+    <% state_color_class = "blue" %>
+    <% elsif election["party"] == "Independent" %>
+    <% state_color_class = "yellow" %>
+    <% elsif election["party"] == "Green" %>
+    <% state_color_class = "green" %>
+    <% else %>
+    <% state_color_class = "orange" %>
+    <% end %>
+    <div class="state-election <%= state_color_class %>">
+      <p><span>Candidate: </span><%= election["candidate"]%></p>
+      <p><span>Party: </span><%= election["party"]%></p>
+      <p><span>Website: </span><%= election["url"]%></p>
+      <p><span>Running For: </span><%= election["running_for"]%></p>
+    </div>
+    <% end %>
+  </div>
+
+</div>
