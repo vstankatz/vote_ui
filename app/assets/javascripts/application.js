@@ -35,5 +35,19 @@
       $('#info-box').css('left',e.pageX-($('#info-box').width())/2);
     }).mouseover();
 
+    $(".state-click").click(function() {
+      var abbr = this.id;
+      var request = new XMLHttpRequest()
+      request.open('GET', 'http://localhost:4567/states', true)
+      request.onload = function() {
+        var data = JSON.parse(this.response)
+        data.forEach(state => {
+          alert(state.code)
+        })
+      }
+      // // find id where our api's states where abbreviation == abbr
+      // window.location.replace(`http://localhost:3000/states/${abbr}`);
+    });
+
 
   });
