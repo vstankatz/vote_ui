@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
   def self.sweep(session)
     if session[:updated_at] == nil
       return true
-    elsif (session[:updated_at]) < 5.seconds.ago
+    elsif (session[:updated_at]) < 20.minutes.ago
       session.destroy
       session.clear
       session[:user_id] = nil

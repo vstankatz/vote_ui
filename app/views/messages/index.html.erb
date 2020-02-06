@@ -8,7 +8,14 @@
     <% if message.body %>
       <% user = User.find(message.user_id) %>
       <p><%= user.name %></p>
+      <% if user.name == current_user.name %>
+        <% class_name = "me" %>
+      <% else %>
+        <% class_name = "you" %>
+      <% end %>
+      <div class="<%= class_name %>">
       <p><%= message.body %></p>
+    </div>
     <% end %>
   <% end %>
 <% end %>
