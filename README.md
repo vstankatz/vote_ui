@@ -30,7 +30,7 @@ This application was made as a team coding project at _[Epicodus](http://www.epi
 ## References
 
 ## Support and contact details
-Contact [Lee](https://github.com/LeePedersen), [Jonathan](https://github.com/jonathansalfen), [Veronica](https://github.com/vstankatz), [Eva](https://github.com/evawiedmann) for support.
+Contact [Lee](https://github.com/LeePedersen), [Jonathan](https://github.com/jonathansalfen), [Veronica](https://github.com/vstankatz), or [Eva](https://github.com/evawiedmann) for support.
 
 ## License
 This repository is copyright (C) 2020 by Veronica Stanley-Katz, Lee Pedersen, Jonathan Salfen, and Eva Wiedmann.
