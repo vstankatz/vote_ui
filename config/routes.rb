@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
-  
+
   #development route for map
 
   root to: 'information#index'

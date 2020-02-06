@@ -19,6 +19,7 @@
   //= require jquery3
   //= require popper
   //= require bootstrap-sprockets
+
   $(document).ready(function () {
 
     $("path, circle").hover(function(e) {
@@ -37,16 +38,18 @@
 
     $(".state-click").click(function() {
       var abbr = this.id;
-      var request = new XMLHttpRequest()
-      request.open('GET', 'http://localhost:4567/states', true)
-      request.onload = function() {
-        var data = JSON.parse(this.response)
-        data.forEach(state => {
-          alert(state.code)
-        })
-      }
-      // // find id where our api's states where abbreviation == abbr
-      // window.location.replace(`http://localhost:3000/states/${abbr}`);
+      // xhttp.open("GET", "http://localhost:4567/states")
+      // // var request = HTTParty.get(`http://localhost:4567/states?search=${abbr}`)
+      // // request.open('GET', `http://localhost:4567/states?search=${abbr}`, true);
+      // alert("got past request.open");
+      // // var data = this.response;
+      // alert(request);
+      // var stateId = request["id"];
+
+      window.location.replace(`http://localhost:3000/information/11`);
+      // find id where our api's states where abbreviation == abbr
+
+
     });
 
 
