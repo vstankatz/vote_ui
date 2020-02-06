@@ -1,0 +1,33 @@
+.post {
+  border: 3px solid;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 20px;
+  width: 50%;
+  margin: 20px auto;
+}
+
+.post-title {
+  font-size: 30px;
+  border-bottom: 3px solid;
+}
+
+.post-content {
+  text-align: left;
+}
+
+.forum-header {
+  font-size: 40px;
+  color: #1B326E;
+}
+
+#add-post {
+  font-size: 25px;
+}
+
+.post-form {
+  width: 80%;
+  margin: 10px auto;
+  font-size: 20px;
+}

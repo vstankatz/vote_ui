@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  after_action :current_session
+  # after_action :current_session
 
   def create
     @user = User.authenticate(params[:email], params[:password])

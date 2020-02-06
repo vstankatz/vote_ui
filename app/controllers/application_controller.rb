@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def current_session
-    if current_user
-      SweepJob.perform_async(session)
-    end
-  end
+  # def current_session
+  #   if current_user
+  #     SweepJob.perform_async(session)
+  #   end
+  # end
 
   def authorize
     if !current_user
@@ -36,16 +36,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def self.sweep(session)
-    if session[:updated_at] == nil
-      return true
-    elsif (session[:updated_at]) < 20.minutes.ago
-      session.destroy
-      session.clear
-      session[:user_id] = nil
-      @current_user = nil
-      return true
-    end
-    false
-  end
+  # def self.sweep(session)
+  #   if session[:updated_at] == nil
+  #     return true
+  #   elsif (session[:updated_at]) < 20.minutes.ago
+  #     session.destroy
+  #     session.clear
+  #     session[:user_id] = nil
+  #     @current_user = nil
+  #     return true
+  #   end
+  #   false
+  # end
+
 end
