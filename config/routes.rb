@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
   get '/information' => 'information#show'
+
   #development route for map
 
   root to: 'information#index'
