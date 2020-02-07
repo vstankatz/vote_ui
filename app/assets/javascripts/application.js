@@ -49,8 +49,5 @@
       window.location.replace(`http://localhost:3000/information/11`);
       // find id where our api's states where abbreviation == abbr
 
-
     });
-
-
   });
