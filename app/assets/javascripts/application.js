@@ -20,7 +20,8 @@
   //= require popper
   //= require bootstrap-sprockets
 
-  $(document).ready(function () {
+  $(document).ready(function (e) {
+    // e.preventDefalt();
 
     $("path, circle").hover(function(e) {
       $('#info-box').css('display','block');
@@ -36,12 +37,9 @@
       $('#info-box').css('left',e.pageX-($('#info-box').width())/2);
     }).mouseover();
 
-    $(".state-click").click(function() {
-
-      var id = this.className.animVal.split(" ")[1]
-
+    $(document).on('click', ".state-click", function() {
+      var id = this.className.animVal.split(" ")[1];
       window.location.replace(`http://localhost:3000/information/${id}`);
-
-
+      // window.location.reload();
     });
   });
