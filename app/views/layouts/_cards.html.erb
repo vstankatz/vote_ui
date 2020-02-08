@@ -1,33 +1,45 @@
 <div class="card-deck">
-    <div class="card" style="width: 18rem;">
-      <div class="image-overlay">
-        <%= image_tag("research.jpg", :alt=>"Card image cap", :class=>"card-img-top") %>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Research</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+  <div class="card" style="width: 18rem;">
+    <div class="image-overlay">
+      <%= image_tag("research.jpg", :alt=>"Card image cap", :class=>"card-img-top") %>
     </div>
-    <div class="card" style="width: 18rem;">
-      <div class="image-overlay">
-        <%= image_tag("chat.jpg", :alt=>"Card image cap", :class=>"card-img-top") %>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Chat</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+    <div class="card-body">
+      <h5 class="card-title">Upcoming <br>Elections</h5>
+      <p class="card-text">Checkout the list of upcoming elections from all states.</p>
+      <a id="modal-btn" class="btn btn-primary">Check it out</a>
     </div>
-    <div class="card" style="width: 18rem;">
-      <div class="image-overlay">
-        <%= image_tag("hands.jpg", :alt=>"Card image cap", :class=>"card-img-top") %>
+  </div>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span><br>
+      <h3>Upcoming Elections</h3><br>
+      <hr>
+      <% @election_info[0]["upcomings"].each do |election| %>
+      <p><span><%=election["name"]%></span></p>
+      <p><span>Election Date:</span>  <%=election["date"] %></p>
+      <br>
+      <% end %>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="image-overlay">
+      <%= image_tag("chat.jpg", :alt=>"Card image cap", :class=>"card-img-top") %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Chat</h5>
+      <p class="card-text">Post to the Votential forum to ask your political questions and get advice from other users.</p>
+      <a href="/posts" class="btn btn-primary">Go to Forum</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="image-overlay">
+      <%= image_tag("hands.jpg", :alt=>"Card image cap", :class=>"card-img-top") %>
 
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Meet</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
     </div>
+    <div class="card-body">
+      <h5 class="card-title">Meet</h5>
+      <p class="card-text">Using your Votential user account you can message other users to plan political action.</p>
+      <a href="/conversations" class="btn btn-primary">Go to your Chat</a>
+    </div>
+  </div>
 </div>
