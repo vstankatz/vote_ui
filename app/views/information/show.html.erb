@@ -5,8 +5,8 @@
     <div>
       <h3>Info for <%= @state_info["code"] %>:</h3>
       <div class="state-info">
-        <p><span>Primary: </span><%= @state_info["primary"] %></p>
-        <p><span>Absentee: </span><%= @state_info["absentee"] %></p>
+        <p><span>Primary or Caucus: </span><%= @state_info["primary"] %></p>
+        <p><span>Absentee: </span><%= @state_info["absentee"] %>.</p>
         <p><span>Need an ID to Vote? </span><a href=<%= @state_info["whats_needed"] %>>Find Out Here</a></p>
         <p><span>State Governor: </span><%= @state_info["govenor"] %></p>
         <p><span>State Governor Phone: </span><%= @state_info["govenor_phone"] %></p>
@@ -27,14 +27,18 @@
   <h3>Local Election Info:</h3>
   <div class="state-elections">
     <% @state_info["elections"].each do |election| %>
-    <% if election["party"] == "Republican" %>
+    <% if election["party"].include? "Republican" %>
     <% state_color_class = "red" %>
-    <% elsif election["party"] == "Democratic" %>
+    <% elsif election["party"].include? "Democratic" %>
     <% state_color_class = "blue" %>
-    <% elsif election["party"] == "Independent" %>
+    <% elsif election["party"].include? "Independent" %>
     <% state_color_class = "yellow" %>
-    <% elsif election["party"] == "Green" %>
+    <% elsif election["party"].include? "Green" %>
     <% state_color_class = "green" %>
+    <% elsif election["party"].include? "Constitution" %>
+    <% state_color_class = "grey" %>
+    <% elsif election["party"].include? "Progressive" %>
+    <% state_color_class = "dark" %>
     <% else %>
     <% state_color_class = "orange" %>
     <% end %>
